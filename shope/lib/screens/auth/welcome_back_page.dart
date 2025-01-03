@@ -2,9 +2,11 @@
 import 'package:shope/app_properties.dart';
 import 'package:flutter/material.dart';
 
-// import 'register_page.dart';
+import 'register_page.dart';
 
-class                            WelcomeBackPage extends StatefulWidget {
+class WelcomeBackPage extends StatefulWidget {
+  const WelcomeBackPage({super.key});
+
   @override
   _WelcomeBackPageState createState() => _WelcomeBackPageState();
 }
@@ -46,20 +48,13 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
       left: MediaQuery.of(context).size.width / 4,
       bottom: 40,
       child: InkWell(
-        // onTap: () {
-        //   Navigator.of(context)
-        //       .push(MaterialPageRoute(builder: (_) => RegisterPage()));
-        // },
+        onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => RegisterPage()));
+        },
         child: Container(
           width: MediaQuery.of(context).size.width / 2,
           height: 80,
-          child: Center(
-              child: new Text("Log In",
-                  style: const TextStyle(
-                      color: const Color(0xfffefefe),
-                      fontWeight: FontWeight.w600,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 20.0))),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
@@ -77,6 +72,13 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                 )
               ],
               borderRadius: BorderRadius.circular(9.0)),
+          child: Center(
+              child: Text("Log In",
+                  style: const TextStyle(
+                      color: Color(0xfffefefe),
+                      fontWeight: FontWeight.w600,
+                      fontStyle: FontStyle.normal,
+                      fontSize: 20.0))),
         ),
       ),
     );
